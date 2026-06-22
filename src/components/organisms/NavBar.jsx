@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Tooltip } from '../atoms/Tooltip';
 
 export function NavBar({ isDark, toggleTheme }) {
   const location = useLocation();
@@ -13,7 +14,7 @@ export function NavBar({ isDark, toggleTheme }) {
     { label: 'Portfólio', path: '#', enabled: false },
     { label: 'Blog', path: '#', enabled: false },
     { label: 'Achados', path: '#', enabled: false },
-    { label: 'Favoritos', path: '#', enabled: false },
+    { label: 'Favoritos', path: '/favoritos', enabled: true },
     { label: 'Arte', path: '#', enabled: false },
     { label: 'Links', path: '/links', enabled: true },
   ];
@@ -46,14 +47,13 @@ export function NavBar({ isDark, toggleTheme }) {
                 {link.label}
               </Link>
             ) : (
-              <span 
-                key={link.label}
-                className="nav-disabled-link font-body text-[15px] font-medium text-text-disabled cursor-not-allowed relative"
-                title="em breve"
-              >
-                {link.label}
-                <span className="nav-tooltip">em breve</span>
-              </span>
+              <Tooltip key={link.label} text="em breve" position="bottom">
+                <span 
+                  className="font-body text-[15px] font-medium text-text-disabled cursor-not-allowed"
+                >
+                  {link.label}
+                </span>
+              </Tooltip>
             )
           ))}
         </nav>

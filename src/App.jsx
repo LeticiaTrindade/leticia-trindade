@@ -4,6 +4,7 @@ import { NavBar } from './components/organisms/NavBar';
 import { FloatingChat } from './components/organisms/FloatingChat';
 import Home from './pages/Home';
 import Links from './pages/Links';
+import Favoritos from './pages/Favoritos';
 import DesignSystem from './pages/DesignSystem';
 import { Constellation } from './components/organisms/Constellation';
 
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/design-system" element={<DesignSystem />} />
           <Route path="/links" element={<Links />} />
+          <Route path="/favoritos" element={<Favoritos />} />
         </Routes>
       </main>
 

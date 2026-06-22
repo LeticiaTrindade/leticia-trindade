@@ -172,7 +172,7 @@ export default function Home() {
             description="Coisas que uso e que fazem meu dia melhor"
             icon={Heart}
             imageSrc={favorites}
-            comingSoon={true}
+            href="/favoritos"
           />
           <ProjectCard
             title="Arte"

@@ -13,11 +13,11 @@
       BRAND COLORS
   ====================================================== */
 
-  --color-brand-moon-lavender: #CFA7FF;
-  --color-brand-lavender: #B989F7;
-  --color-brand-purple: #8D63D2;
-  --color-brand-deep-purple: #6B46A3;
-  --color-brand-lilac: #EADFFF;
+  --color-brand-moon-lavender: var(--brand-primary);
+  --color-brand-lavender: var(--brand-primary);
+  --color-brand-purple: var(--brand-primary);
+  --color-brand-deep-purple: var(--brand-primary-hover);
+  --color-brand-lilac: var(--brand-primary-light);
 
   /* ======================================================
       ACCENT
@@ -80,7 +80,7 @@
     0 15px 40px rgba(0,0,0,.08);
 
   --shadow-glow:
-    0 0 30px rgba(185,137,247,.25);
+    0 0 30px color-mix(in srgb, var(--brand-primary) 25%, transparent);
 
   --shadow-moon:
     0 0 40px rgba(255,215,163,.35);
@@ -116,6 +116,10 @@
 
   --text-disabled: #B8AFC2;
 
+  --brand-primary: #A488C2;
+  --brand-primary-hover: #8A6DA8;
+  --brand-primary-light: color-mix(in srgb, #A488C2 10%, transparent);
+
 }
 
 /* =========================================================
@@ -137,6 +141,10 @@
   --text-secondary: #C8B8DD;
 
   --text-disabled: #7D7896;
+
+  --brand-primary: #DCA7DB;
+  --brand-primary-hover: #C596C5;
+  --brand-primary-light: color-mix(in srgb, #DCA7DB 10%, transparent);
 
 }
 
@@ -182,7 +190,7 @@
 
   ::selection{
 
-    background:#B989F7;
+    background: var(--brand-primary);
 
     color:white;
 
@@ -218,7 +226,7 @@
 
     @apply px-6 py-3 rounded-xl;
 
-    background:#B989F7;
+    background: var(--brand-primary);
 
     color:white;
 
@@ -228,7 +236,7 @@
 
   .btn-primary:hover{
 
-    background:#A874F3;
+    background: var(--brand-primary-hover);
 
     transform:translateY(-2px);
 
@@ -238,9 +246,9 @@
 
     @apply px-6 py-3 rounded-xl;
 
-    border:1px solid #B989F7;
+    border:1px solid var(--brand-primary);
 
-    color:#B989F7;
+    color: var(--brand-primary);
 
     transition:.25s;
 
@@ -248,7 +256,7 @@
 
   .btn-secondary:hover{
 
-    background:rgba(185,137,247,.10);
+    background: var(--brand-primary-light);
 
   }
 
@@ -282,6 +290,20 @@
     transform: translateX(-50%) translateY(0);
   }
 
+  /* ── Tooltip padrão (componente reutilizável) ── */
+  .tooltip-bubble {
+    background: var(--card);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  }
+
 }
 
 /* =========================================================
@@ -295,7 +317,7 @@
     background:linear-gradient(
       135deg,
       #CFA7FF,
-      #B989F7,
+      var(--brand-primary),
       #FFD7A3
     );
 
@@ -381,7 +403,7 @@
 
 ::-webkit-scrollbar-thumb{
 
-  background:#B989F7;
+  background: var(--brand-primary);
 
   border-radius:999px;
 
@@ -389,7 +411,7 @@
 
 ::-webkit-scrollbar-thumb:hover{
 
-  background:#A874F3;
+  background: var(--brand-primary-hover);
 
 }
 
@@ -437,7 +459,7 @@
     135deg,
     #FFD7A3 0%,
     #F4C97B 25%,
-    #B989F7 50%,
+    var(--brand-primary) 50%,
     #CFA7FF 75%,
     #FFD7A3 100%
   );
@@ -445,7 +467,7 @@
   animation: shimmer-ring 4s ease-in-out infinite;
   box-shadow:
     0 0 20px rgba(255,215,163,.25),
-    0 0 40px rgba(185,137,247,.15);
+    0 0 40px color-mix(in srgb, var(--brand-primary) 15%, transparent);
 }
 
 .links-profile-inner {
@@ -479,7 +501,7 @@
 .links-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
-  border-color: #B989F7;
+  border-color: var(--brand-primary);
 }
 
 .links-card-icon {
@@ -489,14 +511,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(185,137,247,.10);
-  color: #B989F7;
+  background: var(--brand-primary-light);
+  color: var(--brand-primary);
   flex-shrink: 0;
   transition: all 0.3s;
 }
 
 .links-card:hover .links-card-icon {
-  background: #B989F7;
+  background: var(--brand-primary);
   color: white;
 }
 
@@ -508,8 +530,8 @@
 
 .dark .links-card:hover {
   background: rgba(22,28,54,.9);
-  border-color: #B989F7;
-  box-shadow: 0 0 30px rgba(185,137,247,.2);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--brand-primary) 20%, transparent);
 }
 
 /* Quote card */
@@ -517,14 +539,14 @@
   position: relative;
   max-width: 380px;
   width: 90%;
-  padding: 24px 28px;
+  padding: 0px 28px;
   border-radius: var(--radius-2xl);
   border: 1px solid var(--border);
   background: var(--card);
+  background: rgba(170, 153, 184, 0.058);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
 }
 
 .links-quote-moon {
@@ -543,7 +565,7 @@
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(185,137,247,.08) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--brand-primary) 8%, transparent) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: -1;

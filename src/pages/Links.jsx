@@ -4,6 +4,8 @@ import { Moon, ArrowRight } from 'lucide-react';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { SiShopee } from 'react-icons/si';
 import { FaTiktok, FaYoutube, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { WiMoonWaningCrescent4 } from "react-icons/wi";
+
 
 import { Star } from '../components/atoms/Star';
 import { Constellation } from '../components/organisms/Constellation';
@@ -12,6 +14,13 @@ import moonLight from '../assets/images/moon-light.png';
 import moonDark from '../assets/images/moon-dark.png';
 
 const linkItems = [
+  {
+    icon: SiShopee,
+    title: 'Minha Loja na Shopee',
+    subtitle: 'veja meus achados',
+    href: 'https://s.shopee.com.br/8AT7BkSfhN',
+    color: '#B989F7',
+  },
   {
     icon: SlSocialInstagram,
     title: 'Instagram Pessoal',
@@ -34,24 +43,10 @@ const linkItems = [
     color: '#B989F7',
   },
   {
-    icon: FaYoutube,
-    title: 'YouTube',
-    subtitle: '/leticiatrindadet',
-    href: 'https://www.youtube.com/@leticiatrindadet',
-    color: '#B989F7',
-  },
-  {
     icon: SlSocialInstagram,
     title: 'Desenhos & Nail Art',
     subtitle: '@leeh.trindartes',
     href: 'https://www.instagram.com/leeh.trindartes/',
-    color: '#B989F7',
-  },
-  {
-    icon: SiShopee,
-    title: 'Minha Loja na Shopee',
-    subtitle: 'veja meus achados',
-    href: 'https://s.shopee.com.br/8AT7BkSfhN',
     color: '#B989F7',
   },
   {
@@ -66,6 +61,13 @@ const linkItems = [
     title: 'LinkedIn',
     subtitle: '/in/leticiatrindadett',
     href: 'https://www.linkedin.com/in/leticiatrindadett/',
+    color: '#B989F7',
+  },
+  {
+    icon: FaYoutube,
+    title: 'YouTube',
+    subtitle: '/leticiatrindadet',
+    href: 'https://www.youtube.com/@leticiatrindadet',
     color: '#B989F7',
   },
 ];
@@ -210,10 +212,10 @@ export default function Links() {
         transition={{ duration: 0.8, delay: 1 }}
         className="links-quote-card mb-8"
       >
-        <div className="links-quote-moon floating">
-          <Moon size={20} className="text-brand-purple" />
+        <div className="links-quote-moon  relative bottom-5">
+          <WiMoonWaningCrescent4 size={40} className="text-accent-soft-gold" />
         </div>
-        <p className="font-body text-[14px] text-text-secondary text-center leading-relaxed">
+        <p className="mt-[-20px] pb-3 font-body text-[14px] text-text-secondary text-center leading-relaxed">
           Transformo ideias em experiências<br />
           e pequenos detalhes em grandes descobertas.
         </p>
