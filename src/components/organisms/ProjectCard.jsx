@@ -7,11 +7,17 @@ export function ProjectCard({
   imageSrc, 
   icon: Icon,
   href = '#',
+  comingSoon = false,
   className = '' 
 }) {
+  const Wrapper = comingSoon ? 'div' : 'a';
+  const wrapperProps = comingSoon 
+    ? { className: `block group cursor-default ${className}` }
+    : { href, className: `block group ${className}` };
+
   return (
-    <a href={href} className={`block group ${className}`}>
-      <MoonCard className="p-0 overflow-hidden flex flex-col h-full h-full relative" hoverEffect={true}>
+    <Wrapper {...wrapperProps}>
+      <MoonCard className="p-0 overflow-hidden flex flex-col h-full relative" hoverEffect={!comingSoon}>
         {/* Top Image Section */}
         <div className="h-40 w-full relative overflow-hidden bg-surface">
           {imageSrc ? (
@@ -28,6 +34,9 @@ export function ProjectCard({
           
           {/* Overlay to blend image with card */}
           <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-80" />
+
+          {/* Dark mode overlay to darken photos */}
+          <div className="absolute inset-0 bg-black/0 dark:bg-black/30 transition-colors duration-300 pointer-events-none" />
         </div>
 
         {/* Icon Floating overlapping the image and content */}
@@ -38,15 +47,23 @@ export function ProjectCard({
         )}
 
         {/* Content Section */}
-        <div className="pt-8 pb-6 px-6 flex flex-col items-center text-center flex-grow">
+        <div className="pt-8 pb-12 px-6 flex flex-col items-center text-center flex-grow">
           <h3 className="font-heading font-semibold text-[22px] text-text-primary mb-2 group-hover:text-brand-purple transition-colors">
             {title}
           </h3>
           <p className="font-body text-[14px] text-text-secondary leading-relaxed">
             {description}
           </p>
+
+          {/* Coming soon badge */}
+          {comingSoon && (
+            <span className="mt-3 inline-block font-body text-[12px] text-text-disabled bg-surface border border-border px-3 py-1 rounded-full">
+              em breve
+            </span>
+          )}
         </div>
       </MoonCard>
-    </a>
+    </Wrapper>
   );
 }
+

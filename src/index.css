@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* =========================================================
    DESIGN SYSTEM
    leticiatrindade.com.br
@@ -106,7 +108,7 @@
 
   --card: #FCFAFD;
 
-  --border: #E7DFEA;
+  --border: #E8D9C4;
 
   --text-primary: #46345D;
 
@@ -128,7 +130,7 @@
 
   --card: #161C36;
 
-  --border: #2D3154;
+  --border: #3D3040;
 
   --text-primary: #F6F0FF;
 
@@ -248,6 +250,36 @@
 
     background:rgba(185,137,247,.10);
 
+  }
+
+  /* Nav disabled link tooltip */
+  .nav-disabled-link {
+    position: relative;
+  }
+
+  .nav-tooltip {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--card);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-family: var(--font-body);
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    z-index: 100;
+  }
+
+  .nav-disabled-link:hover .nav-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 
 }
@@ -384,4 +416,148 @@
     transparent 70%
   );
 
+}
+
+/* =========================================================
+   LINKS PAGE
+========================================================= */
+
+/* Profile photo ring */
+.links-profile-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.links-profile-ring {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(
+    135deg,
+    #FFD7A3 0%,
+    #F4C97B 25%,
+    #B989F7 50%,
+    #CFA7FF 75%,
+    #FFD7A3 100%
+  );
+  background-size: 200% 200%;
+  animation: shimmer-ring 4s ease-in-out infinite;
+  box-shadow:
+    0 0 20px rgba(255,215,163,.25),
+    0 0 40px rgba(185,137,247,.15);
+}
+
+.links-profile-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--bg);
+}
+
+@keyframes shimmer-ring {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Link cards */
+.links-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-default);
+  text-decoration: none;
+}
+
+.links-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+  border-color: #B989F7;
+}
+
+.links-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(185,137,247,.10);
+  color: #B989F7;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.links-card:hover .links-card-icon {
+  background: #B989F7;
+  color: white;
+}
+
+/* Dark theme link cards */
+.dark .links-card {
+  background: rgba(22,28,54,.7);
+  border-color: var(--border);
+}
+
+.dark .links-card:hover {
+  background: rgba(22,28,54,.9);
+  border-color: #B989F7;
+  box-shadow: 0 0 30px rgba(185,137,247,.2);
+}
+
+/* Quote card */
+.links-quote-card {
+  position: relative;
+  max-width: 380px;
+  width: 90%;
+  padding: 24px 28px;
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--border);
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.links-quote-moon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Links page background orbs for dark mode */
+.dark .links-page::before {
+  content: '';
+  position: fixed;
+  top: 10%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(185,137,247,.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark .links-page::after {
+  content: '';
+  position: fixed;
+  bottom: 10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,215,163,.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
 }
