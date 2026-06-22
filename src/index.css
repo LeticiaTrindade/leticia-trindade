@@ -1,0 +1,387 @@
+@import "tailwindcss";
+
+/* =========================================================
+   DESIGN SYSTEM
+   leticiatrindade.com.br
+========================================================= */
+
+@theme {
+
+  /* ======================================================
+      BRAND COLORS
+  ====================================================== */
+
+  --color-brand-moon-lavender: #CFA7FF;
+  --color-brand-lavender: #B989F7;
+  --color-brand-purple: #8D63D2;
+  --color-brand-deep-purple: #6B46A3;
+  --color-brand-lilac: #EADFFF;
+
+  /* ======================================================
+      ACCENT
+  ====================================================== */
+
+  --color-accent-moon-gold: #FFD7A3;
+  --color-accent-soft-gold: #F4C97B;
+  --color-accent-star: #FFE9B8;
+  --color-accent-glow: #FFF5D6;
+
+  /* ======================================================
+      STATUS
+  ====================================================== */
+
+  --color-status-success: #6BCB8A;
+  --color-status-warning: #F5C96B;
+  --color-status-error: #EB6A75;
+  --color-status-info: #66A9FF;
+
+  /* ======================================================
+      SEMANTIC COLORS
+  ====================================================== */
+
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-border: var(--border);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-disabled: var(--text-disabled);
+
+  /* ======================================================
+      TYPOGRAPHY
+  ====================================================== */
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+  --font-handwritten: "Caveat", cursive;
+
+  /* ======================================================
+      BORDER RADIUS
+  ====================================================== */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* ======================================================
+      SHADOWS
+  ====================================================== */
+
+  --shadow-soft:
+    0 8px 30px rgba(119, 92, 163, .08);
+
+  --shadow-card:
+    0 15px 40px rgba(0,0,0,.08);
+
+  --shadow-glow:
+    0 0 30px rgba(185,137,247,.25);
+
+  --shadow-moon:
+    0 0 40px rgba(255,215,163,.35);
+
+  /* ======================================================
+      TRANSITIONS
+  ====================================================== */
+
+  --ease-default: cubic-bezier(.4,0,.2,1);
+
+  --duration-fast: .15s;
+  --duration: .25s;
+  --duration-slow: .45s;
+}
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+:root {
+
+  --bg: #F9F5F8;
+
+  --surface: #FFFFFF;
+
+  --card: #FCFAFD;
+
+  --border: #E7DFEA;
+
+  --text-primary: #46345D;
+
+  --text-secondary: #756884;
+
+  --text-disabled: #B8AFC2;
+
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+.dark {
+
+  --bg: #070A1A;
+
+  --surface: #0F1329;
+
+  --card: #161C36;
+
+  --border: #2D3154;
+
+  --text-primary: #F6F0FF;
+
+  --text-secondary: #C8B8DD;
+
+  --text-disabled: #7D7896;
+
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+
+@layer base {
+
+  *{
+    @apply border-border;
+  }
+
+  html{
+    scroll-behavior:smooth;
+  }
+
+  body{
+
+    @apply bg-background text-text-primary;
+
+    font-family: var(--font-body);
+
+    transition:
+      background-color .35s,
+      color .35s;
+
+    min-height:100vh;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+  }
+
+  h1,h2,h3,h4,h5,h6{
+
+    font-family:var(--font-heading);
+
+    font-weight:600;
+
+  }
+
+  ::selection{
+
+    background:#B989F7;
+
+    color:white;
+
+  }
+
+}
+
+/* =========================================================
+   COMPONENTS
+========================================================= */
+
+@layer components {
+
+  .card{
+
+    @apply rounded-xl border bg-card;
+
+    box-shadow:var(--shadow-soft);
+
+  }
+
+  .glass{
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+  }
+
+  .btn-primary{
+
+    @apply px-6 py-3 rounded-xl;
+
+    background:#B989F7;
+
+    color:white;
+
+    transition:.25s;
+
+  }
+
+  .btn-primary:hover{
+
+    background:#A874F3;
+
+    transform:translateY(-2px);
+
+  }
+
+  .btn-secondary{
+
+    @apply px-6 py-3 rounded-xl;
+
+    border:1px solid #B989F7;
+
+    color:#B989F7;
+
+    transition:.25s;
+
+  }
+
+  .btn-secondary:hover{
+
+    background:rgba(185,137,247,.10);
+
+  }
+
+}
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+
+@layer utilities {
+
+  .text-gradient{
+
+    background:linear-gradient(
+      135deg,
+      #CFA7FF,
+      #B989F7,
+      #FFD7A3
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+  }
+
+  .moon-glow{
+
+    filter:
+      drop-shadow(0 0 12px rgba(255,215,163,.45))
+      drop-shadow(0 0 28px rgba(255,215,163,.25));
+
+  }
+
+  .floating{
+
+    animation:float 5s ease-in-out infinite;
+
+  }
+
+  .stars{
+
+    animation:twinkle 4s ease-in-out infinite;
+
+  }
+
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+@keyframes twinkle{
+
+  0%{
+    opacity:.45;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:.45;
+  }
+
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+  width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+  background:var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:#B989F7;
+
+  border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+  background:#A874F3;
+
+}
+
+/* =========================================================
+   DARK MOON EFFECT
+========================================================= */
+
+.dark .moon-image{
+
+  filter:
+    brightness(1.15)
+    contrast(1.05)
+    saturate(1.2)
+    sepia(.25);
+
+}
+
+.dark .moon-background{
+
+  background:radial-gradient(
+    circle,
+    rgba(255,215,163,.40) 0%,
+    rgba(255,215,163,.15) 35%,
+    transparent 70%
+  );
+
+}
