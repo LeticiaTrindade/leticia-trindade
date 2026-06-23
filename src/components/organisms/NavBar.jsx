@@ -10,7 +10,7 @@ export function NavBar({ isDark, toggleTheme }) {
 
   const navLinks = [
     { label: 'Início', path: '/', enabled: true },
-    { label: 'Sobre', path: '#', enabled: false },
+    { label: 'Sobre', path: '/sobre', enabled: true },
     { label: 'Portfólio', path: '#', enabled: false },
     { label: 'Blog', path: '#', enabled: false },
     { label: 'Achados', path: '#', enabled: false },
