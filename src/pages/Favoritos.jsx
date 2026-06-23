@@ -338,7 +338,7 @@ export default function Favoritos() {
                   rel="noopener noreferrer" 
                   className="w-full"
                 >
-                  <button className="w-full py-3 rounded-xl bg-brand-primary text-white font-body text-[15px] font-medium hover:bg-brand-primary-hover transition-colors shadow-glow cursor-pointer">
+                  <button className="w-full py-3 rounded-xl bg-brand-primary text-text-primary font-body text-[15px] font-medium hover:bg-brand-primary-hover transition-colors shadow-glow cursor-pointer">
                     Ver na {selectedProduct.storeName}
                   </button>
                 </a>
