@@ -10,7 +10,7 @@ import DesignSystem from './pages/DesignSystem';
 import { Constellation } from './components/organisms/Constellation';
 
 const App = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     if (isDark) {

@@ -280,7 +280,7 @@ export default function Sobre() {
       <section className="w-full mb-10 flex flex-col items-center max-w-6xl mx-auto">
         <SectionTitle title="Além do código" showSparkles={true} className="my-8" />
 
-        <div className="w-full overflow-x-auto justify-center pb-6 flex gap-4 px-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className=" grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 overflow-visible pb-6" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {hobbies.map((hobby, idx) => (
             <motion.div
               key={idx}
@@ -308,10 +308,10 @@ export default function Sobre() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="w-full max-w-4xl mx-auto bg-gradient-to-r from-transparent via-brand-primary/10 to-transparent px-auto flex flex-col items-center justify-center gap-4 relative  text-center"
+        className="text-center bg-brand-purple/10 p-4 rounded-2xl"
       >
-        <p className="font-handwritten text-[28px] md:text-2xl leading-tight text-brand-purple tracking-wide max-w-2xl relative z-10">
-          Não acredito que tecnologia e criatividade estejam em lados opostos. Para mim, as melhores soluções surgem justamente quando conseguimos unir lógica, sensibilidade e curiosidade. ✨
+        <p className="font-handwritten text-[28px] md:text-2xl leading-tight text-primary tracking-wide max-w-2xl relative z-10">
+          Não acredito que tecnologia e criatividade estejam em lados opostos. Para mim, as melhores soluções surgem justamente quando conseguimos unir lógica, sensibilidade e curiosidade.
         </p>
       </motion.div>
 
