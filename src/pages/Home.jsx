@@ -15,6 +15,7 @@ import { SectionTitle } from '../components/atoms/SectionTitle';
 import { FloatingMoon } from '../components/atoms/FloatingMoon';
 import { Star } from '../components/atoms/Star';
 import { Tooltip } from '../components/atoms/Tooltip';
+import { Link } from 'react-router-dom'; 
 
 import { SocialCard } from '../components/molecules/SocialCard';
 import { ProjectCard } from '../components/organisms/ProjectCard';
@@ -87,9 +88,11 @@ export default function Home() {
                   Conheça meu trabalho +
                 </MoonButton>
               </Tooltip>
-              <MoonButton variant="secondary" icon={Moon} className="px-8 py-4 text-lg href=">
-                Sobre mim
-              </MoonButton>
+              <Link to="/sobre" className='cursor-pointer' >
+                <MoonButton variant="secondary" icon={Moon} className="px-8 py-4 text-lg">
+                  Sobre mim
+                </MoonButton>
+              </Link>
             </div>
 
           </div>
