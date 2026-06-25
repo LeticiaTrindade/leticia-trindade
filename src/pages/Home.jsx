@@ -14,6 +14,7 @@ import { MoonButton } from '../components/atoms/MoonButton';
 import { SectionTitle } from '../components/atoms/SectionTitle';
 import { FloatingMoon } from '../components/atoms/FloatingMoon';
 import { Star } from '../components/atoms/Star';
+import { Tooltip } from '../components/atoms/Tooltip';
 
 import { SocialCard } from '../components/molecules/SocialCard';
 import { ProjectCard } from '../components/organisms/ProjectCard';
@@ -81,13 +82,16 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 md:ml-32">
-              <MoonButton variant="primary" className="px-8 py-4 text-lg">
-                Conheça meu trabalho +
-              </MoonButton>
-              <MoonButton variant="secondary" icon={Moon} className="px-8 py-4 text-lg">
+              <Tooltip text="Em breve, você poderá conhecer meu trabalho por aqui!" position="bottom">
+                <MoonButton variant="primary" className="px-8 py-4 text-lg">
+                  Conheça meu trabalho +
+                </MoonButton>
+              </Tooltip>
+              <MoonButton variant="secondary" icon={Moon} className="px-8 py-4 text-lg href=">
                 Sobre mim
               </MoonButton>
             </div>
+
           </div>
         </div>
         {/* Right Side: Photo Card */}
@@ -124,7 +128,7 @@ export default function Home() {
         />
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <SocialCard icon={SlSocialInstagram} title="Achados da Leh" subtitle="@achadosdaleh.ofc" href='https://www.instagram.com/achadosdaleh.ofc/'/>
+          <SocialCard icon={SlSocialInstagram} title="Achados da Leh" subtitle="@achadosdaleh.ofc" href='https://www.instagram.com/achadosdaleh.ofc/' />
           <SocialCard icon={SlSocialInstagram} title="Pessoal" subtitle="@leticiatrindadet" href='https://www.instagram.com/leticiatrindadet/' />
           <SocialCard icon={FaTiktok} title="TikTok" subtitle="@leticiatrindadet" href='https://www.tiktok.com/@leticiatrindadet' />
           <SocialCard icon={FaYoutube} title="YouTube" subtitle="@leticiatrindadet" href='https://www.youtube.com/@leticiatrindadet' />
