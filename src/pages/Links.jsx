@@ -9,9 +9,9 @@ import { WiMoonWaningCrescent4 } from "react-icons/wi";
 
 import { Star } from '../components/atoms/Star';
 import { Constellation } from '../components/organisms/Constellation';
-import profile from '../assets/images/profile.png';
-import moonLight from '../assets/images/moon-light.png';
-import moonDark from '../assets/images/moon-dark.png';
+import profile from '../assets/images/common/profile.png';
+import moonLight from '../assets/images/common/moon-light.png';
+import moonDark from '../assets/images/common/moon-dark.png';
 
 const linkItems = [
   {
@@ -223,12 +223,6 @@ export default function Links() {
         <Star className="absolute -bottom-1 -left-3 w-3 h-3 text-brand-lavender" />
       </motion.div>
 
-      {/* ============ FOOTER ============ */}
-      <footer className="text-center pb-4">
-        <p className="font-body text-[13px] text-text-disabled">
-          © 2026 Letícia Trindade. Todos os direitos reservados.
-        </p>
-      </footer>
     </div>
   );
 }

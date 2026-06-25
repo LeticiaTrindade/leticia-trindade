@@ -19,15 +19,15 @@ import { Link } from 'react-router-dom';
 
 import { SocialCard } from '../components/molecules/SocialCard';
 import { ProjectCard } from '../components/organisms/ProjectCard';
-import moonDark from '../assets/images/moon-dark.png';
-import moonLight from '../assets/images/moon-light.png';
-import profile from '../assets/images/profile.png';
+import moonDark from '../assets/images/common/moon-dark.png';
+import moonLight from '../assets/images/common/moon-light.png';
+import profile from '../assets/images/common/profile.png';
 
-import blog from '../assets/images/session-universe/blog.png';
-import portfolio from '../assets/images/session-universe/portfolio.png';
-import finds from '../assets/images/session-universe/finds.png';
-import favorites from '../assets/images/session-universe/favorites.png';
-import art from '../assets/images/session-universe/art.png';
+import blog from '../assets/images/home/session-universe/blog.png';
+import portfolio from '../assets/images/home/session-universe/portfolio.png';
+import finds from '../assets/images/home/session-universe/finds.png';
+import favorites from '../assets/images/home/session-universe/favorites.png';
+import art from '../assets/images/home/session-universe/art.png';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -158,7 +158,7 @@ export default function Home() {
             description="Meus projetos de tecnologia"
             icon={CodeXml}
             imageSrc={portfolio}
-            comingSoon={true}
+            href="/portfolio"
           />
           <ProjectCard
             title="Blog"

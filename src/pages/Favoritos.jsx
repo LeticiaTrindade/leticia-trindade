@@ -18,14 +18,14 @@ import { Star } from '../components/atoms/Star';
 import { Constellation } from '../components/organisms/Constellation';
 import { FavoriteCard } from '../components/organisms/FavoriteCard';
 
-import moonLight from '../assets/images/moon-light.png';
-import moonDark from '../assets/images/moon-dark.png';
+import moonLight from '../assets/images/common/moon-light.png';
+import moonDark from '../assets/images/common/moon-dark.png';
 
-import espelho from '../assets/images/favorites/espelho.jpeg';
-import esponjas from '../assets/images/favorites/conjuntoDeEsponjasEPincel.png';
-import pinceisNeilArt from '../assets/images/favorites/pinceisNailArt.jpeg';
-import boleadores from '../assets/images/favorites/boleadores.jpeg';
-import selfie from '../assets/images/favorites/selfie.png';
+import espelho from '../assets/images/favoritos/espelho.jpeg';
+import esponjas from '../assets/images/favoritos/conjuntoDeEsponjasEPincel.png';
+import pinceisNeilArt from '../assets/images/favoritos/pinceisNailArt.jpeg';
+import boleadores from '../assets/images/favoritos/boleadores.jpeg';
+import selfie from '../assets/images/favoritos/selfie.png';
 
 const categories = [
   { id: 'todos', label: 'Todos', icon: StarIcon },
@@ -251,17 +251,6 @@ export default function Favoritos() {
           </p>
         </div>
       </section>
-
-      {/* ================= FOOTER ================= */}
-      <footer className="w-full max-w-6xl mx-auto px-6 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="font-body text-[13px] text-text-disabled">
-          © 2026 Letícia Trindade. Todos os direitos reservados.
-        </p>
-        
-        <div className="flex items-center gap-1 opacity-50">
-           <Star className="w-6 h-6 text-brand-primary" />
-        </div>
-      </footer>
 
       {/* ================= MODAL DE OPINIÃO ================= */}
       <AnimatePresence>

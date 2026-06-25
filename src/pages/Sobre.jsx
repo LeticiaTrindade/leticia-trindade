@@ -9,17 +9,17 @@ import { VscVscode } from "react-icons/vsc";
 
 import { SectionTitle } from '../components/atoms/SectionTitle';
 
-import profileImg from '../assets/images/profile.png';
-import moonDark from '../assets/images/moon-dark.png';
-import moonLight from '../assets/images/moon-light.png';
+import profileImg from '../assets/images/common/profile.png';
+import moonDark from '../assets/images/common/moon-dark.png';
+import moonLight from '../assets/images/common/moon-light.png';
 
 // Hobbies Images
-import livrosImg from '../assets/images/hobbies/livros.png';
-import nailArtImg from '../assets/images/hobbies/nail_art.png';
-import astronomiaImg from '../assets/images/hobbies/astronomia.png';
-import lagerthaImg from '../assets/images/hobbies/lagertha.png';
-import cafeImg from '../assets/images/hobbies/cafe.png';
-import arteDigitalImg from '../assets/images/hobbies/arte_digital.png';
+import livrosImg from '../assets/images/sobre/hobbies/livros.png';
+import nailArtImg from '../assets/images/sobre/hobbies/nail_art.png';
+import astronomiaImg from '../assets/images/sobre/hobbies/astronomia.png';
+import lagerthaImg from '../assets/images/sobre/hobbies/lagertha.png';
+import cafeImg from '../assets/images/sobre/hobbies/cafe.png';
+import arteDigitalImg from '../assets/images/sobre/hobbies/arte_digital.png';
 const jogosIndieImg = 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=400&h=400';
 
 const trajectory = [

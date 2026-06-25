@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { NavBar } from './components/organisms/NavBar';
 import { FloatingChat } from './components/organisms/FloatingChat';
+import { Footer } from './components/organisms/Footer';
 import Home from './pages/Home';
 import Links from './pages/Links';
 import Favoritos from './pages/Favoritos';
 import Sobre from './pages/Sobre';
+import Portfolio from './pages/Portfolio';
 import DesignSystem from './pages/DesignSystem';
 import { Constellation } from './components/organisms/Constellation';
 
@@ -36,11 +38,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/design-system" element={<DesignSystem />} />
           <Route path="/links" element={<Links />} />
           <Route path="/favoritos" element={<Favoritos />} />
         </Routes>
       </main>
+
+      <Footer />
 
       <FloatingChat />
     </BrowserRouter>
